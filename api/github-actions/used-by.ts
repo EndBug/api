@@ -11,7 +11,7 @@ export default async (req: NowRequest, res: NowResponse) => {
   const useShield = badge === 'true'
 
   const search = await octokit.request('GET /search/code', {
-    q: `${action} path:.github/workflows/ language:YAML`
+    q: `${action.replace(/[\.,:;/\\`'"=*!?#$&+^|~<>(){}\[\]]/g, '+')} path:.github/workflows/ language:YAML fork:true`
   }).catch()
 
   if (!useShield) res.send(search.data.total_count)
