@@ -1,10 +1,10 @@
-import { NowRequest, NowResponse } from '@vercel/node'
+import { VercelRequest, VercelResponse } from '@vercel/node'
 import { Octokit } from '@octokit/core'
 const octokit = new Octokit({
   auth: process.env.GITHUB_SEARCH_TOKEN
 })
 
-export default async (req: NowRequest, res: NowResponse) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   const { action, badge, ...badgeStuff } = req.query
 
   if (!action || typeof action != 'string') return res.status(400)
