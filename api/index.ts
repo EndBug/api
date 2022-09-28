@@ -1,5 +1,5 @@
-import { NowRequest, NowResponse } from '@vercel/node'
+import { VercelRequest, VercelResponse } from '@vercel/node'
 
-export default (_req: NowRequest, res: NowResponse) => {
+export default (_req: VercelRequest, res: VercelResponse) => {
   res.send('https://github.com/EndBug/api')
 }
