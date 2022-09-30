@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/EndBug/api/issues"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "homepage": "https://github.com/EndBug/api#readme",
   "dependencies": {
     "@octokit/core": "^4.0.5",
